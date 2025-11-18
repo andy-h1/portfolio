@@ -1,0 +1,37 @@
+import { WorkExperienceLayout } from '@/components/WorkExperienceLayout'
+
+export const workExperience = {
+  author: 'Andy Huynh',
+  date: '2021-03 to 2024-02',
+  title: 'Seldon',
+  description: 'MLOps B2B SaaS company',
+}
+
+export const metadata = {
+  title: workExperience.title,
+  description: workExperience.description,
+}
+
+export default (props) => <WorkExperienceLayout workExperience={workExperience} {...props} />
+
+**Technologies used:** React, TypeScript, Google Cloud, Tailwind CSS, D3.js, Kubernetes
+
+**TLDR:** I joined Seldon - an MLOps B2B SaaS company - as their second frontend engineer, building features that helped data-centric businesses deploy, optimise, and scale their machine learning and LLM models.
+
+## The story
+
+At Seldon, I worked alongside data scientists, data engineers, and DevOps engineers building data visualisation dashboards using Seldon Core - our internal framework for managing machine learning models in production. It was thrilling work in an exciting industry, combining React, TypeScript, and D3.js whilst deploying models with Google Cloud and Kubernetes.
+
+## The challenges
+
+Machine learning models work with enormous datasets, and our biggest challenge was visualising all that data without sacrificing loading times or responsiveness. Working closely with our data scientists, we mapped out exactly what data they needed to see, what timeframes mattered, and which filters were essential. We leveraged React's useMemo and useCallback hooks to cache data intelligently, avoiding expensive API calls and only fetching what we needed, when we needed it.
+
+The steeper learning curve for me was understanding what data scientists actually needed from these UIs. I spent a lot of time in exploratory sessions with the team, learning how data modelling works, what affects model validity, and how retraining works. You can't build useful tools without understanding the problems they're solving.
+
+## My favourite project
+
+Building out the data visualisation dashboards was my favourite work at Seldon, partly because we started from scratch with no predefined charting library. I researched the most popular options - Recharts, Nivo, Chart.js, and D3.js - and given our need for high customisability, we went with D3.js built on top of React and TypeScript. It was challenging and rewarding in equal measure.
+
+## Most impactful work
+
+The work that mattered most was helping Seldon raise $20m in Series B funding. We built features that transformed our open-source platform (Seldon Core) into an out-of-the-box UI (Seldon Deploy) where customers could plug and play their models. This included drift detection, outlier detection, model explainability, and updates to our shadow and canary deployment features. Seeing that work contribute to the company's growth was incredibly satisfying.

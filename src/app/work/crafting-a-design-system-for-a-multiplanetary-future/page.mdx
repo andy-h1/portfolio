@@ -1,0 +1,39 @@
+import { WorkExperienceLayout } from '@/components/WorkExperienceLayout'
+
+export const workExperience = {
+  author: 'Andy Huynh',
+  date: '2024-02 to 2024-09',
+  title: 'Kry',
+  description: "Europe's leading digital healthcare provider",
+}
+
+export const metadata = {
+  title: workExperience.title,
+  description: workExperience.description,
+}
+
+export default (props) => <WorkExperienceLayout workExperience={workExperience} {...props} />
+
+**Technologies used:** React, TypeScript, Node, AWS, Vitest, Cypress, PHP
+
+**TLDR:** I joined Kry - a digital healthcare platform - in their London team as a software engineer to refactor their legacy codebase and build out new features for their messaging platform.
+
+## The story
+
+Kry acquired MJog, a messaging platform used by GP practices across the UK to engage with patients for everything from appointment booking to video consultations and health monitoring. I joined the MJog team to help modernise their legacy PHP codebase, migrating it to React and TypeScript whilst building new features and collaborating with teams across the European market.
+
+## The challenges
+
+Electronic medical records are sacred ground. Keeping our patient data secure whilst maintaining sync with the two clinical systems that hold a duopoly on primary care data in England (EMIS and SystmOne) was no small feat. We also didn't have a dedicated design team, so I found myself wearing multiple hats - designing low and high fidelity wireframes alongside the development work. Add on-premise infrastructure into the mix, and you've got yourself quite the puzzle.
+
+## My favourite project
+
+During standup one day, I noticed we were drowning in support tickets. The support team needed help with basic CRUD operations - creating, updating, and deleting GP practices from our databases. When I dug deeper, I discovered the reason: we had zero safeguards on our API endpoints. A rogue support team member (or developer) could theoretically delete everything, and we'd have no way to track who did it. Red flags everywhere.
+
+I worked with our product manager, backend developer, and support team to build them a proper admin UI with authentication, authorisation, and all the CRUD operations they needed. I created API endpoints using our backend-for-frontend in Node/Express and integrated Datadog logging so we'd have a complete audit trail.
+
+The tech stack was straightforward: Vite as the framework, React and TypeScript for type safety, Tailwind for styling, and Zod for validation between frontend and backend. We deployed the frontend on AWS S3 served by CloudFront, whilst the BFF ran on ECS.
+
+## Most impactful work
+
+The unglamorous truth is that the most impactful work in software engineering isn't always the prettiest. For me at Kry, it was cost reduction. I deprecated unused services, optimised Cron jobs in AWS EventBridge, and tackled our biggest expense - Datadog log volume. By excluding low-value logs (INFO and DEBUG) from indexing and applying smarter retention policies, we significantly cut our operational costs.
