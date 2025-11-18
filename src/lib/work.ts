@@ -1,4 +1,5 @@
 import glob from 'fast-glob'
+import { StaticImageData } from 'next/image'
 
 interface WorkExperience {
   title: string
@@ -7,6 +8,8 @@ interface WorkExperience {
   date: string
   technologies: string
   tldr: string
+  logo?: StaticImageData
+  logoSmall?: StaticImageData
 }
 
 export interface WorkExperienceWithSlug extends WorkExperience {
@@ -34,5 +37,10 @@ export async function getAllWorkExperiences() {
 
   let workExperiences = await Promise.all(workFilenames.map(importWorkExperience))
 
-  return workExperiences.sort((a, z) => +new Date(z.date) - +new Date(a.date))
+  return workExperiences.sort((a, z) => {
+    // Extract start date from range format (e.g., "2024-02 to 2024-09" -> "2024-02")
+    const aDate = a.date.split(' to ')[0]
+    const zDate = z.date.split(' to ')[0]
+    return +new Date(zDate) - +new Date(aDate)
+  })
 }

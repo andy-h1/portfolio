@@ -1,0 +1,37 @@
+import { WorkExperienceLayout } from '@/components/WorkExperienceLayout'
+import logoLix from '@/images/work/lix.png'
+import logoLixSmall from '@/images/logos/lix.png'
+
+export const workExperience = {
+  author: 'Andy Huynh',
+  date: '2020-11 to 2021-02',
+  title: 'Lix',
+  description: 'Data scraping Chrome extension startup',
+  logo: logoLix,
+  logoSmall: logoLixSmall,
+  technologies: 'React, TypeScript, Storybook, Chrome Extension APIs',
+  tldr: "I joined my friend's startup - Lix, a data scraping Chrome extension - as their sole frontend developer, updating both the website interface and the extension itself.",
+}
+
+export const metadata = {
+  title: workExperience.title,
+  description: workExperience.description,
+}
+
+export default (props) => <WorkExperienceLayout workExperience={workExperience} {...props} />
+
+## The story
+
+Sometimes the best opportunities come from your mates. A friend of mine was building Lix, a data scraping Chrome extension, and needed someone to handle the frontend. I came on board as the sole frontend developer, responsible for both the marketing website and the extension interface itself.
+
+## The challenges
+
+Being the only frontend developer meant wearing all the hats - there was no one else to bounce ideas off or share the load. I had to set up everything from scratch: the development workflow, testing infrastructure, and the bridge between design and code. Working on a Chrome extension also brought its own quirks - you're building within the constraints of browser APIs whilst trying to keep the user experience smooth and intuitive.
+
+## My favourite project
+
+Setting up our component-driven development workflow was probably my proudest achievement at Lix. I introduced Storybook for component development and built out automated testing, which cut our QA cycles in half. It might not sound glamorous, but when you're a small startup moving fast, halving the time from development to deployment is massive.
+
+## Most impactful work
+
+Working directly with the founder, I established our design-to-development workflow, translating Figma designs into production code. We created a rhythm where designs could move from concept to implementation smoothly, which is crucial when you're trying to iterate quickly in a startup environment. This workflow became the foundation for how we shipped features, and honestly, it felt like we were building the plane whilst flying it - in the best possible way.

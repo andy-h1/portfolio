@@ -1,35 +1,36 @@
 import { type Metadata } from 'next'
+import Image from 'next/image'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { type WorkExperienceWithSlug, getAllWorkExperiences } from '@/lib/work'
-import { formatDate } from '@/lib/formatDate'
 
 function WorkExperienceItem({ workExperience }: { workExperience: WorkExperienceWithSlug }) {
   return (
-    <article className="md:grid md:grid-cols-4 md:items-baseline">
-      <Card className="md:col-span-3">
-        <Card.Title href={`/work/${workExperience.slug}`}>
-          {workExperience.title}
-        </Card.Title>
-        <Card.Eyebrow
-          as="time"
-          dateTime={workExperience.date}
-          className="md:hidden"
-          decorate
-        >
-          {workExperience.date}
-        </Card.Eyebrow>
-        <Card.Description>{workExperience.description}</Card.Description>
-        <Card.Cta>Read experience</Card.Cta>
+    <article className="md:grid md:grid-cols-1 md:items-baseline">
+      <Card>
+        <div className="flex items-start gap-4">
+          {workExperience.logoSmall && (
+            <div className="relative z-30 h-12 w-12 flex-shrink-0 rounded-md overflow-hidden ring-1 ring-zinc-900/5 dark:ring-white/10 bg-neutral-300">
+              <Image
+                src={workExperience.logoSmall}
+                alt={`${workExperience.title} logo`}
+                className="object-contain p-2"
+                fill
+                sizes="48px"
+                priority
+              />
+            </div>
+          )}
+          <div className="flex-1">
+            <Card.Title href={`/work/${workExperience.slug}`}>
+              {workExperience.title}
+            </Card.Title>
+            <Card.Description>{workExperience.description}</Card.Description>
+            <Card.Cta>Read experience</Card.Cta>
+          </div>
+        </div>
       </Card>
-      <Card.Eyebrow
-        as="time"
-        dateTime={workExperience.date}
-        className="mt-1 max-md:hidden"
-      >
-        {workExperience.date}
-      </Card.Eyebrow>
     </article>
   )
 }

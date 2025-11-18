@@ -1,10 +1,16 @@
 import { WorkExperienceLayout } from '@/components/WorkExperienceLayout'
+import logoKry from '@/images/work/kry.png'
+import logoKrySmall from '@/images/logos/kry.svg'
 
 export const workExperience = {
   author: 'Andy Huynh',
   date: '2024-02 to 2024-09',
   title: 'Kry',
   description: "Europe's leading digital healthcare provider",
+  logo: logoKry,
+  logoSmall: logoKrySmall,
+  technologies: 'React, TypeScript, Node, AWS, Vitest, Cypress, PHP',
+  tldr: "I joined Kry - a digital healthcare platform - in their London team as a software engineer to refactor their legacy codebase and build out new features for their messaging platform.",
 }
 
 export const metadata = {
@@ -13,10 +19,6 @@ export const metadata = {
 }
 
 export default (props) => <WorkExperienceLayout workExperience={workExperience} {...props} />
-
-**Technologies used:** React, TypeScript, Node, AWS, Vitest, Cypress, PHP
-
-**TLDR:** I joined Kry - a digital healthcare platform - in their London team as a software engineer to refactor their legacy codebase and build out new features for their messaging platform.
 
 ## The story
 

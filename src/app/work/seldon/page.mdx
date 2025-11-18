@@ -1,10 +1,16 @@
 import { WorkExperienceLayout } from '@/components/WorkExperienceLayout'
+import logoSeldon from '@/images/work/seldon.png'
+import logoSeldonSmall from '@/images/logos/seldon-logo.png'
 
 export const workExperience = {
   author: 'Andy Huynh',
   date: '2021-03 to 2024-02',
   title: 'Seldon',
   description: 'MLOps B2B SaaS company',
+  logo: logoSeldon,
+  logoSmall: logoSeldonSmall,
+  technologies: 'React, TypeScript, Google Cloud, Tailwind CSS, D3.js, Kubernetes',
+  tldr: "I joined Seldon - an MLOps B2B SaaS company - as their second frontend engineer, building features that helped data-centric businesses deploy, optimise, and scale their machine learning and LLM models.",
 }
 
 export const metadata = {
@@ -13,10 +19,6 @@ export const metadata = {
 }
 
 export default (props) => <WorkExperienceLayout workExperience={workExperience} {...props} />
-
-**Technologies used:** React, TypeScript, Google Cloud, Tailwind CSS, D3.js, Kubernetes
-
-**TLDR:** I joined Seldon - an MLOps B2B SaaS company - as their second frontend engineer, building features that helped data-centric businesses deploy, optimise, and scale their machine learning and LLM models.
 
 ## The story
 
