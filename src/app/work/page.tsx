@@ -11,15 +11,17 @@ function WorkExperienceItem({ workExperience }: { workExperience: WorkExperience
       <Card>
         <div className="flex items-start gap-4">
           {workExperience.logoSmall && (
-            <div className="relative z-30 h-12 w-12 flex-shrink-0 rounded-md overflow-hidden ring-1 ring-zinc-900/5 dark:ring-white/10 bg-neutral-300">
-              <Image
-                src={workExperience.logoSmall}
-                alt={`${workExperience.title} logo`}
-                className="object-contain p-2"
-                fill
-                sizes="48px"
-                priority
-              />
+            <div className="relative z-30 h-12 w-12 flex-shrink-0 rounded-md overflow-hidden ring-1 ring-zinc-900/5 dark:ring-white/10 bg-zinc-200 dark:bg-zinc-400 p-2 flex items-center justify-center">
+              <div className="relative h-full w-full">
+                <Image
+                  src={workExperience.logoSmall}
+                  alt={`${workExperience.title} logo`}
+                  className="object-contain"
+                  fill
+                  sizes="48px"
+                  priority
+                />
+              </div>
             </div>
           )}
           <div className="flex-1">
