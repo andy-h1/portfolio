@@ -7,16 +7,19 @@ import '@/styles/tailwind.css'
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - Spencer Sharp',
+    template: '%s - Andy Huynh',
     default:
-      'Spencer Sharp - Software designer, founder, and amateur astronaut',
+      'Andy Huynh - Software engineer and developer',
   },
   description:
-    'I’m Spencer, a software designer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms.',
+    "I'm Andy, a software engineer and developer passionate about creating innovative web applications and user experiences.",
   alternates: {
     types: {
       'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
     },
+  },
+  icons: {
+    icon: '/favicon.ico',
   },
 }
 
