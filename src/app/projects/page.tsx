@@ -11,7 +11,7 @@ const projects = [
   {
     name: 'Hyrox App',
     description:
-      'A full-stack app for tracking Hyrox training and performance amongst athletes"',
+      'A full-stack app for tracking Hyrox training and performance amongst athletes',
     link: { href: 'https://github.com/andy-h1/hyrox-app', label: 'github.com' },
     logo: logoHyrox,
   },
