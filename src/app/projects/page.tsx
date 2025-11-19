@@ -3,47 +3,31 @@ import Image from 'next/image'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoAnimaginary from '@/images/logos/animaginary.svg'
-import logoCosmos from '@/images/logos/cosmos.svg'
-import logoHelioStream from '@/images/logos/helio-stream.svg'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
+import logoHyrox from '@/images/logos/hyrox.jpg'
+import logoExpense from '@/images/logos/expense.png'
+import logoQuestionnaire from '@/images/logos/questionnaire.png'
 
 const projects = [
   {
-    name: 'Planetaria',
+    name: 'Hyrox App',
     description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
-    logo: logoPlanetaria,
+      'A full-stack app for tracking Hyrox training and performance amongst athletes"',
+    link: { href: 'https://github.com/andy-h1/hyrox-app', label: 'github.com' },
+    logo: logoHyrox,
   },
   {
-    name: 'Animaginary',
+    name: 'Expense Tracker',
     description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoAnimaginary,
+      'An app for tracking and managing personal expenses',
+    link: { href: 'https://github.com/andy-h1/expense-tracker', label: 'github.com' },
+    logo: logoExpense,
   },
   {
-    name: 'HelioStream',
+    name: 'Health Check Questionnaire',
     description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoHelioStream,
-  },
-  {
-    name: 'cosmOS',
-    description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoCosmos,
-  },
-  {
-    name: 'OpenShuttle',
-    description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoOpenShuttle,
+      'A questionnaire that assesses illness severity',
+    link: { href: 'https://github.com/andy-h1/healthcheck-task', label: 'github.com' },
+    logo: logoQuestionnaire,
   },
 ]
 
@@ -60,14 +44,14 @@ function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 export const metadata: Metadata = {
   title: 'Projects',
-  description: 'Things I’ve made trying to put my dent in the universe.',
+  description: 'My playground for learning new technologies and having fun along the way!',
 }
 
 export default function Projects() {
   return (
     <SimpleLayout
-      title="Things I’ve made trying to put my dent in the universe."
-      intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
+      title="My playground for learning new technologies and having fun along the way!"
+      intro="When you don't find me training for a physical event, you'll find me working on my projects. In the world of development, software is constantly changing, so projects are great incubators to test things out and level up your skills."
     >
       <ul
         role="list"
@@ -75,13 +59,16 @@ export default function Projects() {
       >
         {projects.map((project) => (
           <Card as="li" key={project.name}>
-            <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <Image
-                src={project.logo}
-                alt=""
-                className="h-8 w-8"
-                unoptimized
-              />
+            <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-md shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:ring-white/10 bg-zinc-200 dark:bg-zinc-400 p-2">
+              <div className="relative h-full w-full">
+                <Image
+                  src={project.logo}
+                  alt=""
+                  className="object-contain"
+                  fill
+                  unoptimized
+                />
+              </div>
             </div>
             <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
               <Card.Link href={project.link.href}>{project.name}</Card.Link>
