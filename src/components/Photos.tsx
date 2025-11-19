@@ -8,10 +8,12 @@ import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
 import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
+import image6 from '@/images/photos/image-6.jpg'
+import image7 from '@/images/photos/image-7.jpg'
 
 export function Photos() {
-  let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
-  let images = [image1, image2, image3, image4, image5]
+  let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2']
+  let images = [image1, image2, image3, image4, image5, image6, image7]
   const scrollRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
